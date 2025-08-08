@@ -13,7 +13,7 @@ const Cart = () => {
     {
       id: 1,
       name: "Chocolate Chip Classic",
-      price: 12.99,
+      price: 5.2,
       quantity: 2,
       image: "🍪",
       category: "Classic"
@@ -21,7 +21,7 @@ const Cart = () => {
     {
       id: 2,
       name: "Double Fudge Brownie",
-      price: 14.99,
+      price: 6.0,
       quantity: 1,
       image: "🍫",
       category: "Premium"
@@ -29,7 +29,7 @@ const Cart = () => {
     {
       id: 3,
       name: "Peanut Butter Bliss",
-      price: 13.99,
+      price: 5.6,
       quantity: 3,
       image: "🥜",
       category: "Specialty"

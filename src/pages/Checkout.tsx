@@ -42,9 +42,9 @@ const Checkout = () => {
   });
 
   const cartItems = [
-    { id: 1, name: "Chocolate Chip Classic", price: 12.99, quantity: 2, image: "🍪" },
-    { id: 2, name: "Double Fudge Brownie", price: 14.99, quantity: 1, image: "🍫" },
-    { id: 3, name: "Peanut Butter Bliss", price: 13.99, quantity: 3, image: "🥜" }
+    { id: 1, name: "Chocolate Chip Classic", price: 5.2, quantity: 2, image: "🍪" },
+    { id: 2, name: "Double Fudge Brownie", price: 6.0, quantity: 1, image: "🍫" },
+    { id: 3, name: "Peanut Butter Bliss", price: 5.6, quantity: 3, image: "🥜" }
   ];
 
   const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);

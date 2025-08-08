@@ -15,7 +15,7 @@ const Index = () => {
     {
       id: 1,
       name: "Chocolate Chip Classic",
-      price: 12.99,
+      price: 5.2,
       rating: 4.8,
       image: imgChocChip,
       imageAlt: "Photorealistic chocolate chip cookies on dark backdrop",
@@ -25,7 +25,7 @@ const Index = () => {
     {
       id: 2,
       name: "Double Fudge Brownie",
-      price: 14.99,
+      price: 6.0,
       rating: 4.9,
       image: imgDoubleFudge,
       imageAlt: "Double fudge brownie cookies with glossy drizzle, moody lighting",
@@ -35,7 +35,7 @@ const Index = () => {
     {
       id: 3,
       name: "Oatmeal Raisin",
-      price: 11.99,
+      price: 4.8,
       rating: 4.6,
       image: imgOatmealRaisin,
       imageAlt: "Oatmeal raisin cookies with visible oats and plump raisins",
@@ -45,7 +45,7 @@ const Index = () => {
     {
       id: 4,
       name: "Sugar Cookie Delights",
-      price: 10.99,
+      price: 4.4,
       rating: 4.7,
       image: imgSugarCookie,
       imageAlt: "Sugar cookies dusted with crystalline sugar, studio shot",
@@ -55,7 +55,7 @@ const Index = () => {
     {
       id: 5,
       name: "Peanut Butter Bliss",
-      price: 13.99,
+      price: 5.6,
       rating: 4.8,
       image: imgPeanutButter,
       imageAlt: "Peanut butter cookies with classic fork marks, premium look",
@@ -65,7 +65,7 @@ const Index = () => {
     {
       id: 6,
       name: "Red Velvet Dreams",
-      price: 15.99,
+      price: 6.4,
       rating: 4.9,
       image: imgRedVelvet,
       imageAlt: "Red velvet cookies with cream cheese centers, dark moody style",
@@ -188,7 +188,7 @@ const Index = () => {
                   <CardTitle className="mb-3 text-xl">{cookie.name}</CardTitle>
                   <CardDescription className="mb-6 text-base">{cookie.description}</CardDescription>
                   <div className="flex items-center justify-between">
-                    <span className="text-3xl font-bold text-primary">${cookie.price}</span>
+                    <span className="text-3xl font-bold text-primary">${cookie.price.toFixed(2)}</span>
                     <Button 
                       size="default" 
                       className="ml-auto"
