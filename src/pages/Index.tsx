@@ -193,7 +193,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {cookies.map((cookie) => (
+            {cookies.filter((c) => c.category !== "Cookie of the Month").map((cookie) => (
               <Card key={cookie.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <CardHeader className="pb-4">
                   <div className="relative mb-4">
