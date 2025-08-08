@@ -203,7 +203,7 @@ const Index = () => {
                         src={cookie.image}
                         alt={cookie.imageAlt}
                         loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        className={`h-full w-full object-cover transition-transform duration-300 ${cookie.name === "Red Velvet Dreams" ? "scale-110 md:scale-125" : ""} group-hover:scale-105`}
                       />
                     </div>
                     <Button 
