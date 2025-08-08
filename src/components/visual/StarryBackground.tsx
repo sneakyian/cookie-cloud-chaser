@@ -38,7 +38,7 @@ export default function StarryBackground() {
       stars = Array.from({ length: density }, () => ({
         x: rand(0, w),
         y: rand(0, h),
-        r: rand(0.4, 1.4),
+        r: rand(0.2, 0.8),
         baseA: rand(0.35, 0.9),
         tw: rand(0.0015, 0.004), // twinkle speed
         ph: rand(0, Math.PI * 2), // phase
@@ -49,7 +49,7 @@ export default function StarryBackground() {
       blinkers = Array.from({ length: blinkerCount }, () => ({
         x: rand(0, w),
         y: rand(0, h),
-        r: rand(1.2, 2.2),
+        r: rand(0.6, 1.4),
         baseA: rand(0.8, 1.0),
         on: Math.floor(rand(40, 110)), // frames on
         off: Math.floor(rand(25, 80)), // frames off
@@ -103,12 +103,12 @@ export default function StarryBackground() {
       for (const s of stars) {
         const a = s.baseA * (0.7 + 0.3 * Math.sin(t * s.tw + s.ph));
         // Star glow
-        const g = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 4);
+        const g = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 3);
         g.addColorStop(0, `hsla(0 0% 100% / ${Math.min(1, a).toFixed(3)})`);
         g.addColorStop(1, `hsla(0 0% 100% / 0)`);
         ctx.fillStyle = g;
         ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r * 4, 0, Math.PI * 2);
+        ctx.arc(s.x, s.y, s.r * 3, 0, Math.PI * 2);
         ctx.fill();
 
         // Star core
@@ -126,12 +126,12 @@ export default function StarryBackground() {
         const a = isOn ? b.baseA : 0.02;
 
         // Glow
-        const g2 = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.r * 6);
+        const g2 = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.r * 4);
         g2.addColorStop(0, `hsla(0 0% 100% / ${Math.min(1, a).toFixed(3)})`);
         g2.addColorStop(1, `hsla(0 0% 100% / 0)`);
         ctx.fillStyle = g2;
         ctx.beginPath();
-        ctx.arc(b.x, b.y, b.r * 6, 0, Math.PI * 2);
+        ctx.arc(b.x, b.y, b.r * 4, 0, Math.PI * 2);
         ctx.fill();
 
         // Core
