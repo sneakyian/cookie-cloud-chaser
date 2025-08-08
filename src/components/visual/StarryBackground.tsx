@@ -157,7 +157,7 @@ export default function StarryBackground() {
   }, []);
 
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+    <div aria-hidden className="pointer-events-none fixed inset-0 z-0">
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
       {/* Subtle gradient overlay to blend with theme background using semantic tokens */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background/70" />

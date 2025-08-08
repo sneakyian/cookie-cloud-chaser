@@ -88,6 +88,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <StarryBackground />
+      <div className="relative z-10">
       {/* Navigation */}
       <nav className="border-b bg-card/50 backdrop-blur sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -325,6 +326,7 @@ const Index = () => {
           </div>
         </div>
       </footer>
+      </div>
     </div>
   );
 };
