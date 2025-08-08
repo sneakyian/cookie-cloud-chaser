@@ -121,10 +121,14 @@ const Index = () => {
               Handcrafted with love, baked to perfection. Experience the ultimate cookie indulgence delivered right to your door.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8">
-                Order Now
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
+              <Link to="/order">
+                <Button size="lg" className="text-lg px-8">
+                  Order Now
+                </Button>
+              </Link>
+              <Button variant="outline" size="lg" className="text-lg px-8" onClick={() => {
+                document.getElementById('menu-section')?.scrollIntoView({ behavior: 'smooth' });
+              }}>
                 View Menu
               </Button>
             </div>
@@ -133,7 +137,7 @@ const Index = () => {
       </section>
 
       {/* Featured Cookies */}
-      <section className="py-16">
+      <section id="menu-section" className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold mb-4">Our Signature Collection</h3>
@@ -142,12 +146,12 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {cookies.map((cookie) => (
-              <Card key={cookie.id} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <Card key={cookie.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <CardHeader className="pb-4">
-                  <div className="relative mb-3">
-                    <div className="aspect-[3/2] w-full overflow-hidden rounded-md border bg-secondary/30">
+                  <div className="relative mb-4">
+                    <div className="aspect-[4/3] w-full overflow-hidden rounded-lg border bg-secondary/30">
                       <img
                         src={cookie.image}
                         alt={cookie.imageAlt}
@@ -155,7 +159,20 @@ const Index = () => {
                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     </div>
-                    <Button variant="ghost" size="icon" className="absolute right-2 top-2 bg-background/60 backdrop-blur border">
+                    <Button 
+                      variant="ghost" 
+                      size="icon" 
+                      className="absolute right-3 top-3 bg-background/80 backdrop-blur border hover:bg-background/90 hover:text-red-500 transition-colors"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        // Toggle heart state - in a real app, this would update favorites
+                        const heart = e.currentTarget.querySelector('svg');
+                        if (heart) {
+                          heart.classList.toggle('fill-red-500');
+                          heart.classList.toggle('text-red-500');
+                        }
+                      }}
+                    >
                       <Heart className="h-4 w-4" />
                     </Button>
                   </div>
@@ -168,11 +185,19 @@ const Index = () => {
                   </div>
                 </CardHeader>
                 <CardContent className="pt-0">
-                  <CardTitle className="mb-2">{cookie.name}</CardTitle>
-                  <CardDescription className="mb-4">{cookie.description}</CardDescription>
+                  <CardTitle className="mb-3 text-xl">{cookie.name}</CardTitle>
+                  <CardDescription className="mb-6 text-base">{cookie.description}</CardDescription>
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-primary">${cookie.price}</span>
-                    <Button size="sm" className="ml-auto">
+                    <span className="text-3xl font-bold text-primary">${cookie.price}</span>
+                    <Button 
+                      size="default" 
+                      className="ml-auto"
+                      onClick={() => {
+                        // In a real app, this would add to cart state/context
+                        console.log(`Added ${cookie.name} to cart`);
+                        // You could add a toast notification here
+                      }}
+                    >
                       <ShoppingCart className="h-4 w-4 mr-2" />
                       Add to Cart
                     </Button>
