@@ -9,6 +9,7 @@ import imgOatmealRaisin from "@/assets/cookies/oatmeal-raisin.jpg";
 import imgSugarCookie from "@/assets/cookies/sugar-cookie.jpg";
 import imgPeanutButter from "@/assets/cookies/peanut-butter.jpg";
 import imgRedVelvet from "@/assets/cookies/red-velvet.jpg";
+import imgButterCake from "@/assets/cookies/butter-cake.jpg";
 import StarryBackground from "@/components/visual/StarryBackground";
 const Index = () => {
   const cookies = [
@@ -72,6 +73,16 @@ const Index = () => {
       description: "Luxurious red velvet cookies with cream cheese centers",
       category: "Premium",
     },
+    {
+      id: 7,
+      name: "Butter Cake Cookie",
+      price: 5.0,
+      rating: 4.9,
+      image: imgButterCake,
+      imageAlt: "Butter cake cookie dusted with sugar, dark moody premium studio shot",
+      description: "Rich, buttery cake-style cookie with delicate crumb and vanilla.",
+      category: "Cookie of the Month",
+    },
   ];
 
   return (
@@ -132,6 +143,16 @@ const Index = () => {
                 View Menu
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cookie of the Month Banner */}
+      <section aria-label="Cookie of the Month" className="py-6">
+        <div className="container mx-auto px-4">
+          <div className="rounded-lg border border-primary/20 bg-card/60 backdrop-blur p-4 text-center">
+            <p className="text-xs md:text-sm uppercase tracking-wide text-primary">Cookie of the Month</p>
+            <p className="text-base md:text-lg font-semibold">Butter Cake Cookie — Here for a limited time</p>
           </div>
         </div>
       </section>
