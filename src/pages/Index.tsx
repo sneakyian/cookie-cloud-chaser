@@ -79,7 +79,7 @@ const Index = () => {
       price: 5.0,
       rating: 4.9,
       image: imgButterCake,
-      imageAlt: "Butter cake cookie dusted with sugar, dark moody premium studio shot",
+      imageAlt: "Stack of butter cake cookies, dark moody premium studio shot",
       description: "Rich, buttery cake-style cookie with delicate crumb and vanilla.",
       category: "Cookie of the Month",
     },
@@ -153,6 +153,31 @@ const Index = () => {
           <div className="rounded-lg border border-primary/20 bg-card/60 backdrop-blur p-4 text-center">
             <p className="text-xs md:text-sm uppercase tracking-wide text-primary">Cookie of the Month</p>
             <p className="text-base md:text-lg font-semibold">Butter Cake Cookie — Here for a limited time</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Cookie - Butter Cake */}
+      <section aria-label="Featured Butter Cake Cookie" className="py-10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <Card className="overflow-hidden text-center group hover:shadow-xl transition-all duration-300">
+              <div className="aspect-[4/3] w-full overflow-hidden border-b bg-secondary/30">
+                <img
+                  src={imgButterCake}
+                  alt="Stack of butter cake cookies, dark moody premium studio shot"
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <CardContent className="pt-6">
+                <h3 className="text-2xl font-bold mb-2">Butter Cake Cookie</h3>
+                <p className="text-muted-foreground mb-4">Here for a limited time — just $5 each.</p>
+                <Link to="/order">
+                  <Button size="lg">Order Now</Button>
+                </Link>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
