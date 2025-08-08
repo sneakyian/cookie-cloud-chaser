@@ -55,42 +55,45 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+.dark {
+    /* Devin.ai-inspired dark palette */
+    --background: 220 16% 6%;           /* near-black */
+    --foreground: 220 14% 96%;          /* off-white */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 14% 10%;                /* elevated surface */
+    --card-foreground: 220 14% 96%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 14% 10%;
+    --popover-foreground: 220 14% 96%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 258 90% 70%;             /* electric violet */
+    --primary-foreground: 240 10% 5%;   /* contrast on primary */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 12% 14%;           /* subtle surface */
+    --secondary-foreground: 220 14% 96%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 12% 14%;
+    --muted-foreground: 220 10% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 248 100% 76%;             /* violet-blue accent */
+    --accent-foreground: 240 10% 5%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 220 12% 18%;              /* subtle glass border */
+    --input: 220 12% 18%;
+    --ring: 258 90% 70%;
+
+    /* Sidebar tokens */
+    --sidebar-background: 220 14% 8%;
+    --sidebar-foreground: 220 14% 96%;
+    --sidebar-primary: 258 90% 70%;
+    --sidebar-primary-foreground: 240 10% 5%;
+    --sidebar-accent: 220 12% 14%;
+    --sidebar-accent-foreground: 220 14% 96%;
+    --sidebar-border: 220 12% 18%;
+    --sidebar-ring: 258 90% 70%;
   }
 }
 
@@ -100,6 +103,6 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
 }
