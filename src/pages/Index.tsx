@@ -152,7 +152,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="rounded-lg border border-primary/20 bg-card/60 backdrop-blur p-4 text-center">
             <p className="text-xs md:text-sm uppercase tracking-wide text-primary">Cookie of the Month</p>
-            <p className="text-base md:text-lg font-semibold">Butter Cake Cookie — Here for a limited time</p>
+            <p className="text-base md:text-lg font-semibold"><span className="italic">Butter Cake Cookie</span> — Here for a limited time</p>
           </div>
         </div>
       </section>
