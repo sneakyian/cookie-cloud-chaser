@@ -80,7 +80,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <span className="text-2xl">🍪</span>
-            <h1 className="text-2xl font-bold text-primary">Cookie Cloud Chaser</h1>
+            <h1 className="text-2xl font-bold text-primary">Cookie Cloud Bakery</h1>
           </div>
           
           <div className="hidden md:flex items-center space-x-6">
@@ -212,7 +212,7 @@ const Index = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <span className="text-2xl">🍪</span>
-                <span className="text-xl font-bold">Cookie Cloud Chaser</span>
+                <span className="text-xl font-bold">Cookie Cloud Bakery</span>
               </div>
               <p className="text-muted-foreground">
                 Crafting the perfect cookies since 2020. Made with love, delivered with care.
@@ -248,7 +248,7 @@ const Index = () => {
           </div>
           
           <div className="border-t mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 Cookie Cloud Chaser. All rights reserved.</p>
+            <p>&copy; 2024 Cookie Cloud Bakery. All rights reserved.</p>
           </div>
         </div>
       </footer>

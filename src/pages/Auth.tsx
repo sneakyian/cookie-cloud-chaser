@@ -28,7 +28,7 @@ const Auth = () => {
           </Link>
           <div className="flex items-center justify-center space-x-2">
             <span className="text-3xl">🍪</span>
-            <h1 className="text-2xl font-bold text-primary">Cookie Cloud Chaser</h1>
+            <h1 className="text-2xl font-bold text-primary">Cookie Cloud Bakery</h1>
           </div>
           <p className="text-muted-foreground">Welcome back to cookie paradise</p>
         </div>
