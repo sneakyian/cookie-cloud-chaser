@@ -3,7 +3,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Star, Heart, User, Menu } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import imgChocChip from "@/assets/cookies/chocolate-chip.jpg";
+import imgDoubleFudge from "@/assets/cookies/double-fudge-brownie.jpg";
+import imgOatmealRaisin from "@/assets/cookies/oatmeal-raisin.jpg";
+import imgSugarCookie from "@/assets/cookies/sugar-cookie.jpg";
+import imgPeanutButter from "@/assets/cookies/peanut-butter.jpg";
+import imgRedVelvet from "@/assets/cookies/red-velvet.jpg";
 const Index = () => {
   const cookies = [
     {
@@ -11,55 +16,61 @@ const Index = () => {
       name: "Chocolate Chip Classic",
       price: 12.99,
       rating: 4.8,
-      image: "🍪",
+      image: imgChocChip,
+      imageAlt: "Photorealistic chocolate chip cookies on dark backdrop",
       description: "Our signature chocolate chip cookies with premium Belgian chocolate",
-      category: "Classic"
+      category: "Classic",
     },
     {
       id: 2,
       name: "Double Fudge Brownie",
       price: 14.99,
       rating: 4.9,
-      image: "🍫",
+      image: imgDoubleFudge,
+      imageAlt: "Double fudge brownie cookies with glossy drizzle, moody lighting",
       description: "Rich, chewy brownie cookies with double chocolate fudge",
-      category: "Premium"
+      category: "Premium",
     },
     {
       id: 3,
       name: "Oatmeal Raisin",
       price: 11.99,
       rating: 4.6,
-      image: "🥛",
+      image: imgOatmealRaisin,
+      imageAlt: "Oatmeal raisin cookies with visible oats and plump raisins",
       description: "Classic oatmeal cookies with plump raisins and cinnamon",
-      category: "Classic"
+      category: "Classic",
     },
     {
       id: 4,
       name: "Sugar Cookie Delights",
       price: 10.99,
       rating: 4.7,
-      image: "✨",
+      image: imgSugarCookie,
+      imageAlt: "Sugar cookies dusted with crystalline sugar, studio shot",
       description: "Soft, buttery sugar cookies dusted with crystalline sugar",
-      category: "Classic"
+      category: "Classic",
     },
     {
       id: 5,
       name: "Peanut Butter Bliss",
       price: 13.99,
       rating: 4.8,
-      image: "🥜",
+      image: imgPeanutButter,
+      imageAlt: "Peanut butter cookies with classic fork marks, premium look",
       description: "Creamy peanut butter cookies with a perfect chewy texture",
-      category: "Specialty"
+      category: "Specialty",
     },
     {
       id: 6,
       name: "Red Velvet Dreams",
       price: 15.99,
       rating: 4.9,
-      image: "❤️",
+      image: imgRedVelvet,
+      imageAlt: "Red velvet cookies with cream cheese centers, dark moody style",
       description: "Luxurious red velvet cookies with cream cheese centers",
-      category: "Premium"
-    }
+      category: "Premium",
+    },
   ];
 
   return (
@@ -133,9 +144,16 @@ const Index = () => {
             {cookies.map((cookie) => (
               <Card key={cookie.id} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <CardHeader className="pb-4">
-                  <div className="flex items-start justify-between">
-                    <div className="text-4xl mb-2">{cookie.image}</div>
-                    <Button variant="ghost" size="icon" className="opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="relative mb-3">
+                    <div className="aspect-[3/2] w-full overflow-hidden rounded-md border bg-secondary/30">
+                      <img
+                        src={cookie.image}
+                        alt={cookie.imageAlt}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                    <Button variant="ghost" size="icon" className="absolute right-2 top-2 bg-background/60 backdrop-blur border">
                       <Heart className="h-4 w-4" />
                     </Button>
                   </div>
