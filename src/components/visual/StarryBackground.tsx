@@ -17,8 +17,9 @@ export default function StarryBackground() {
     const getSize = () => ({ w: canvas.clientWidth, h: canvas.clientHeight });
 
     type Star = { x: number; y: number; r: number; baseA: number; tw: number; ph: number };
+    type Blinker = { x: number; y: number; r: number; baseA: number; on: number; off: number; ph: number };
     let stars: Star[] = [];
-
+    let blinkers: Blinker[] = [];
     const rand = (min: number, max: number) => Math.random() * (max - min) + min;
 
     // Read HSL tokens from CSS variables; fallback to sensible values
@@ -41,6 +42,18 @@ export default function StarryBackground() {
         baseA: rand(0.35, 0.9),
         tw: rand(0.0015, 0.004), // twinkle speed
         ph: rand(0, Math.PI * 2), // phase
+      }));
+
+      // Brighter "blinkers" that hard-toggle on/off
+      const blinkerCount = Math.max(8, Math.floor((w * h) / 50000));
+      blinkers = Array.from({ length: blinkerCount }, () => ({
+        x: rand(0, w),
+        y: rand(0, h),
+        r: rand(1.2, 2.2),
+        baseA: rand(0.8, 1.0),
+        on: Math.floor(rand(40, 110)), // frames on
+        off: Math.floor(rand(25, 80)), // frames off
+        ph: rand(0, Math.PI * 2), // phase offset
       }));
 
       // Prepaint soft cloud blobs into background layer
@@ -102,6 +115,29 @@ export default function StarryBackground() {
         ctx.fillStyle = `hsla(0 0% 100% / ${Math.min(1, a + 0.1).toFixed(3)})`;
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Draw hard-blinking stars for a pronounced on/off effect
+      for (const b of blinkers) {
+        const cycle = b.on + b.off;
+        const tt = Math.floor(t + b.ph * 60) % cycle;
+        const isOn = tt < b.on;
+        const a = isOn ? b.baseA : 0.02;
+
+        // Glow
+        const g2 = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.r * 6);
+        g2.addColorStop(0, `hsla(0 0% 100% / ${Math.min(1, a).toFixed(3)})`);
+        g2.addColorStop(1, `hsla(0 0% 100% / 0)`);
+        ctx.fillStyle = g2;
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, b.r * 6, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Core
+        ctx.fillStyle = `hsla(0 0% 100% / ${Math.min(1, a + 0.05).toFixed(3)})`;
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
         ctx.fill();
       }
       ctx.restore();
