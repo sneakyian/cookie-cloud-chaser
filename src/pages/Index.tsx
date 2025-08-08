@@ -9,6 +9,7 @@ import imgOatmealRaisin from "@/assets/cookies/oatmeal-raisin.jpg";
 import imgSugarCookie from "@/assets/cookies/sugar-cookie.jpg";
 import imgPeanutButter from "@/assets/cookies/peanut-butter.jpg";
 import imgRedVelvet from "@/assets/cookies/red-velvet.jpg";
+import StarryBackground from "@/components/visual/StarryBackground";
 const Index = () => {
   const cookies = [
     {
@@ -74,7 +75,8 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <StarryBackground />
       {/* Navigation */}
       <nav className="border-b bg-card/50 backdrop-blur sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
